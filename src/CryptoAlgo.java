@@ -14,7 +14,7 @@ public class CryptoAlgo {
         for (char c : string.toCharArray()) {
             stringBuilder.append((char) (c + key));
         }
-        if (flag == true) {
+        if (flag) {
             FileSave.fileWrite(stringBuilder);
         }
         return stringBuilder;

@@ -5,7 +5,7 @@ public class BruteForce {
     private static final int ITEM_KEY = 10;
 
 
-    public void bruteForce(String fileName) throws IOException {
+    public void bruteForceAttack(String fileName) throws IOException {
         String text = new String(fileName);
         for (int i = 1; i < text.length(); i++) {
             String decode = String.valueOf(cryptoAlgo.decode(text, i, false));

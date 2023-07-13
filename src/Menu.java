@@ -68,7 +68,7 @@ public class Menu {
 
     private void itemBruteForce() {
         try {
-            bruteForce.bruteForce(validateFilePath());
+            bruteForce.bruteForceAttack(validateFilePath());
         } catch (IOException e) {
             System.out.println("Incorrect file path");
         }
