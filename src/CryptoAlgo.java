@@ -4,7 +4,7 @@ import java.io.StringReader;
 
 
 public class CryptoAlgo {
-
+    final FileManager fileManager = new FileManager();
 
     public StringBuilder encode(String fileName, int key, boolean flag) throws IOException {
         StringReader text = new StringReader(fileName);
@@ -15,7 +15,7 @@ public class CryptoAlgo {
             stringBuilder.append((char) (c + key));
         }
         if (flag) {
-            FileManager.fileWrite(stringBuilder);
+            fileManager.fileWrite(stringBuilder);
         }
         return stringBuilder;
     }
