@@ -15,7 +15,7 @@ public class CryptoAlgo {
             stringBuilder.append((char) (c + key));
         }
         if (flag) {
-            FileSave.fileWrite(stringBuilder);
+            FileManager.fileWrite(stringBuilder);
         }
         return stringBuilder;
     }
@@ -23,5 +23,4 @@ public class CryptoAlgo {
     public StringBuilder decode(String fileName, int key, boolean flag) throws IOException {
         return encode(fileName, -key, flag);
     }
-
 }
