@@ -52,25 +52,25 @@ public class Menu {
 
     private void itemToEncode() {
         try {
-            cryptoAlgo.encode(validateFilePath(), key.key());
+            cryptoAlgo.encode(validateFilePath(), key.itemKey(), true);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.out.println("Incorrect file path");
         }
     }
 
     private void itemToDecode() {
         try {
-            cryptoAlgo.decode(validateFilePath(), key.key());
+            cryptoAlgo.decode(validateFilePath(), key.itemKey(), true);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.out.println("Incorrect file path");
         }
     }
 
     private void itemBruteForce() {
         try {
-            bruteForce.bruteForce(validateFilePath(), key.key());
+            bruteForce.bruteForceAttack(validateFilePath());
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.out.println("Incorrect file path");
         }
     }
 
@@ -82,6 +82,7 @@ public class Menu {
             String filePath = csFilePath.nextLine();
             list = Files.readString(Path.of(filePath));
         } catch (IOException e) {
+            System.out.println("Incorrect file path");
             throw new RuntimeException(e);
         }
         return list;
